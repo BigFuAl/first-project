@@ -1,0 +1,76 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 30px;
+}
+
+h1 {
+    color: #07c;
+
+img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+button {
+background-color: #07c;
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 5px;
+cursor: pointer;
+}
+button:hover {
+background-color: #005fa3;
+}
+a {
+    color: #07c;
+    text-decoration: none;
+}
+a:hover { 
+    text-decoration: underline;
+}
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffff;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0,0.05);
+    border-radius: 10px;
+}
+.skills {
+    margin: 60px;
+    padding: 40px 20px;
+}
+.skills h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 20px;
+    max-width: 250px;
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+}
+.card h3{
+    margin-top: 0;
+    color: #07c;
+}
+.card p {
+    color: #444;
+    font-size: 15px;
+}
+}
