@@ -82,4 +82,29 @@ document.addEventListener('DOMContentLoaded', () => {
       adviceArea.innerHTML = advice;
     });
   }, 1000); // <- gives the DOM time to stabilize
+  // 3️⃣ Chart.js setup (after DOM elements exist)
+const ctx = document
+  .getElementById('productivityChart')
+  .getContext('2d');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+    datasets: [{
+      label: 'Tasks Completed',
+      data: [3, 2, 4, 5, 3, 1, 0],
+      backgroundColor: 'rgba(197, 160, 222, 0.6)',
+      borderColor: 'rgba(197, 160, 222, 1)',
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: { beginAtZero: true }
+    },
+    responsive: true,
+    maintainAspectRatio: false
+  }
+});
 });
