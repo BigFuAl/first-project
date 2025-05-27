@@ -80,31 +80,59 @@ document.addEventListener('DOMContentLoaded', () => {
     adviceArea.innerText = adviceMap[emotion] || '';
   });
 
-  // ─── Chart.js Bar-Chart Setup ───
-  const canvas = document.getElementById('productivityChart');
-  if (canvas && window.Chart) {
-    const ctx = canvas.getContext('2d');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [
-          {
-            label: 'Tasks Completed',
-            data: [3, 2, 4, 5, 3, 1, 0],
-            backgroundColor: 'rgba(197, 160, 222, 0.6)',
-            borderColor: 'rgba(197, 160, 222, 1)',
-            borderWidth: 1,
-          },
-        ],
-      },
-      options: {
-        scales: { y: { beginAtZero: true } },
-        responsive: true,
-        maintainAspectRatio: false,
-      },
-    });
-  } else {
-    console.error('⚠️ Chart.js not loaded or canvas missing');
+  // ─── Dynamic Chart Data Entry Setup ───
+const savedData = JSON.parse(localStorage.getItem('chartData')) || [3, 2, 4, 5, 3, 1, 0];
+const labels    = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+
+let productivityChart;
+const canvas = document.getElementById('productivityChart');
+
+if (canvas && window.Chart) {
+  const ctx = canvas.getContext('2d');
+  productivityChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Tasks Completed',
+        data: savedData,
+        backgroundColor: 'rgba(197, 160, 222, 0.6)',
+        borderColor: 'rgba(197, 160, 222, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: { y: { beginAtZero: true } },
+      responsive: true,
+      maintainAspectRatio: false
+    }
+  });
+} else {
+  console.error('⚠️ Chart.js not loaded or <canvas id="productivityChart"> missing');
+}
+
+// ─── Handle new data points ───
+const taskInput  = document.getElementById('taskInput');
+const addTaskBtn = document.getElementById('addTaskBtn');
+
+addTaskBtn.addEventListener('click', () => {
+  if (!productivityChart) {
+    console.error('⚠️ Cannot add data point: chart instance is missing');
+    return;
   }
+
+  const val = parseInt(taskInput.value, 10);
+  if (isNaN(val) || val < 0) {
+    return alert('Please enter a valid non-negative number');
+  }
+
+  savedData.push(val);
+  if (savedData.length > 7) savedData.shift();
+
+  productivityChart.data.datasets[0].data = savedData;
+  productivityChart.update();
+
+  localStorage.setItem('chartData', JSON.stringify(savedData));
+  taskInput.value = '';
+});
 });
