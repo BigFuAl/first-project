@@ -35,7 +35,7 @@ body {
 .container {
   display: grid;
   justify-items: center;
-  gap: 1rem;
+  gap: 2rem;
   grid-template-columns: 1fr; /* 1 column on mobile */
   width: 100%;
   max-width: 1200px;
@@ -68,6 +68,7 @@ body {
   max-width: 400px;
   width: 100%;
   animation: fadeIn 0.8s ease-out;
+  z-index: 1;
 }
 
 /* Toggle button wrapper */
@@ -75,6 +76,7 @@ body {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  z-index: 2;
 }
 
 /* Ensure each card fills its grid cell */
