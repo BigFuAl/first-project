@@ -70,6 +70,7 @@ button:hover {
 /* Responsive grid container */
 .container {
   display: grid;
+  justify-items: center;  /* center cards horizontally */
   gap: 1rem;
   grid-template-columns: 1fr;      /* 1 column on mobile */
   width: 100%;
