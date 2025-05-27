@@ -1,21 +1,21 @@
 /* ─── Color Variables ─── */
 :root {
   --bg-gradient-start: #fef6e4;
-  --bg-gradient-end:   #fad2e1;
-  --card-bg:           #fff;
-  --text-color:        #000;
-  --button-bg:         #f3d2c1;
-  --button-hover-bg:   #fad2e1;
+  --bg-gradient-end: #fad2e1;
+  --card-bg: #fff;
+  --text-color: #000;
+  --button-bg: #f3d2c1;
+  --button-hover-bg: #fad2e1;
 }
 
 /* Dark theme overrides */
-[data-theme="dark"] {
+[data-theme='dark'] {
   --bg-gradient-start: #2e2e2e;
-  --bg-gradient-end:   #1a1a1a;
-  --card-bg:           #444;
-  --text-color:        #eee;
-  --button-bg:         #666;
-  --button-hover-bg:   #555;
+  --bg-gradient-end: #1a1a1a;
+  --card-bg: #444;
+  --text-color: #eee;
+  --button-bg: #666;
+  --button-hover-bg: #555;
 }
 
 /* ─── Base Styles ─── */
@@ -36,7 +36,7 @@ body {
   display: grid;
   justify-items: center;
   gap: 1rem;
-  grid-template-columns: 1fr;      /* 1 column on mobile */
+  grid-template-columns: 1fr; /* 1 column on mobile */
   width: 100%;
   max-width: 1200px;
   padding: 1rem;
@@ -58,7 +58,7 @@ body {
 
 /* ─── Cards ─── */
 .card {
-  position: relative;  /* for toggle button */
+  position: relative; /* for toggle button */
   background-color: var(--card-bg);
   color: var(--text-color);
   padding: 2rem;
@@ -150,4 +150,33 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ─── Chart Controls Styling ─── */
+.chart-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.chart-controls input {
+  flex: 1;
+  padding: 0.8rem;
+  font-size: 1rem;
+}
+
+.chart-controls button {
+  flex: 0 0 auto;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chart-controls button:hover {
+  background-color: var(--button-hover-bg);
 }
