@@ -4,7 +4,7 @@
   "description": "<!-- Trigger deploy workflow--><!-- trigger deploy workflow -->",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint smart-daily-dashboard/**/*.js",
+    "lint": "eslint --config .eslintrc.js smart-daily-dashboard/**/*.js",
     "format": "prettier --write smart-daily-dashboard/**/*.{js,css,html}",
     "test": "jest"
   },
