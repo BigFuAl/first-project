@@ -12,78 +12,65 @@
   </head>
 
   <body>
-    <!-- Theme Toggle Button (top right corner) -->
+  <!-- 1. Theme Toggle Button (top right corner, only one!) -->
   <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+
+  <!-- 2. Container holds the two cards -->
   <div class="container">
-    <div class="container">
-      <!-- 1st card: greeting & inputs -->
-      <div class="card">
-        <!-- Dark-mode toggle button -->
-        <div class="toggle-mode">
-          <button id="themeToggle">🌙</button>
-        </div>
-
-        <h1>Good morning!</h1>
-        <p id="greeting">Welcome back</p>
-
-        <input type="text" id="nameInput" placeholder="Enter your name" />
-
-        <select id="moodSelect">
-          <option value="">Select your mood</option>
-          <option value="happy">Happy</option>
-          <option value="tired">Tired</option>
-          <option value="focused">Focused</option>
-          <option value="meh">Meh</option>
-        </select>
-
-        <select id="emotionSelect">
-          <option value="">Select your emotion</option>
-          <option value="anxious">Anxious</option>
-          <option value="sad">Sad</option>
-          <option value="angry">Angry</option>
-          <option value="happy">Happy</option>
-        </select>
-
-        <button id="startBtn">Start my day</button>
-
-        <div id="messageArea"></div>
-        <div id="adviceArea"></div>
-      </div>
-
-      <!-- 2nd card: chart -->
-      <div class="card">
-        <h2>Weekly Productivity</h2>
-        <div style="position: relative; height: 200px">
-          <canvas id="productivityChart"></canvas>
-        </div>
-        <!-- Chart Controls-->
-        <div class="chart-controls">
-          <input
-            type="number"
-            id="taskInput"
-            placeholder="Enter tasks completed today"
-            min="0"
-          />
-          <button id="addTaskBtn">Add Data Point</button>
-        </div>
-      </div>
+    <!-- Card 1: Greeting & Inputs -->
+    <div class="card">
+      <h1>Good morning!</h1>
+      <p id="greeting">Welcome back</p>
+      <input type="text" id="nameInput" placeholder="Enter your name" />
+      <select id="moodSelect">
+        <option value="">Select your mood</option>
+        <option value="happy">Happy</option>
+        <option value="tired">Tired</option>
+        <option value="focused">Focused</option>
+        <option value="meh">Meh</option>
+      </select>
+      <select id="emotionSelect">
+        <option value="">Select your emotion</option>
+        <option value="anxious">Anxious</option>
+        <option value="sad">Sad</option>
+        <option value="angry">Angry</option>
+        <option value="happy">Happy</option>
+      </select>
+      <button id="startBtn">Start my day</button>
+      <div id="messageArea"></div>
+      <div id="adviceArea"></div>
     </div>
 
-    <footer>
-      <p>
-        Made with ❤️ by Aliou Cisse.
-        <a
-          href="https://github.com/BigFuAl/first-project/tree/main/smart-daily-dashboard"
-          target="_blank"
-        >
-          View on GitHub
-        </a>
-      </p>
-    </footer>
+    <!-- Card 2: Chart -->
+    <div class="card">
+      <h2>Weekly Productivity</h2>
+      <div style="position: relative; height: 200px;">
+        <canvas id="productivityChart"></canvas>
+      </div>
+      <div class="chart-controls">
+        <input
+          type="number"
+          id="taskInput"
+          placeholder="Enter tasks completed today"
+          min="0"
+        />
+        <button id="addTaskBtn">Add Data Point</button>
+      </div>
+    </div>
+  </div>
 
-    <!-- 1️⃣ Load Chart.js first -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- 2️⃣ Then your app logic -->
-    <script src="./script.js"></script>
-  </body>
+  <!-- Footer stays outside container -->
+  <footer>
+    <p>
+      Made with ❤️ by Aliou Cisse.
+      <a href="https://github.com/BigFuAl/first-project/tree/main/smart-daily-dashboard" target="_blank">
+        View on GitHub
+      </a>
+    </p>
+  </footer>
+
+  <!-- Chart.js first, then your script -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./script.js"></script>
+</body>
 </html>
