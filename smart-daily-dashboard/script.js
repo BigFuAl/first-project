@@ -3,7 +3,22 @@
 document.addEventListener('DOMContentLoaded', () => {
   console.log('✅ DOM loaded. JS running.');
 
-  // —— Your existing greeting & advice logic ——
+  // ─── Dark-Mode Toggle Setup ───
+  const themeToggle = document.getElementById('themeToggle');
+  // Load saved theme or default to light
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  themeToggle.innerText = savedTheme === 'dark' ? '☀️' : '🌙';
+
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    themeToggle.innerText = next === 'dark' ? '☀️' : '🌙';
+  });
+
+  // ─── Your Existing Greeting & Advice Logic ───
   const nameInput     = document.getElementById('nameInput');
   const moodSelect    = document.getElementById('moodSelect');
   const emotionSelect = document.getElementById('emotionSelect');
@@ -13,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const startBtn      = document.getElementById('startBtn');
   const greetingTitle = document.querySelector('h1');
 
-  // Time‐based greeting
+  // Time-based greeting
   const currentHour = new Date().getHours();
   if (currentHour < 12) {
     greetingTitle.innerText = 'Good morning!';
@@ -68,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     adviceArea.innerText = adviceMap[emotion] || '';
   });
 
-  // —— Chart.js bar‐chart setup ——
+  // ─── Chart.js Bar-Chart Setup ───
   const canvas = document.getElementById('productivityChart');
   if (canvas && window.Chart) {
     const ctx = canvas.getContext('2d');
