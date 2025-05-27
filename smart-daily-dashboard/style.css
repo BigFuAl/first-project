@@ -71,3 +71,33 @@ button:hover {
   color: #333;
   line-height: 1.4;
 }
+/* Responsive grid container */
+.container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;      /* 1 column on mobile */
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* 2-column layout on medium screens */
+@media (min-width: 600px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 3-column layout on wide screens */
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Ensure each card fills its grid cell */
+.container > .card {
+  width: 100%;
+}
