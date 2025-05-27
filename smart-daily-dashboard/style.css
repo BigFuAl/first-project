@@ -1,12 +1,8 @@
 body {
   background: linear-gradient(to bottom, #fef6e4, #fad2e1);
   font-family: 'Fredoka', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
-  padding: 0%;
+  padding: 0;
 }
 
 .card {
@@ -100,4 +96,11 @@ button:hover {
 /* Ensure each card fills its grid cell */
 .container > .card {
   width: 100%;
+}
+/* 3) Added footer styling so it sits below the grid and centers the text */
+footer {
+  text-align: center;
+  margin: 2rem auto;
+  font-size: 0.9rem;
+  color: #333;
 }
