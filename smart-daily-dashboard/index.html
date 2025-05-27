@@ -1,32 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Smart Daily Dashboard</title>
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css2?family-Fredoka&display=swap" rel="stylesheet">
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Daily Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family-Fredoka&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-    <body>
+  <body>
+    <div class="container">
+      <div class="card">
         <h1>Good morning!</h1>
         <p id="greeting">Welcome back</p>
 
         <input type="text" id="nameInput" placeholder="Enter your name" />
 
         <select id="moodSelect">
-            <option value="">Select your mood</option>
-            <option value="happy">Happy</option>
-            <option value="tired">Tired</option>
-            <option value="focused">Focused</option>
-            <option value="meh">Meh</option>
+          <option value="">Select your mood</option>
+          <option value="happy">Happy</option>
+          <option value="tired">Tired</option>
+          <option value="focused">Focused</option>
+          <option value="meh">Meh</option>
+        </select>
+
+        <select id="emotionSelect">
+          <option value="">Select yor emotion</option>
+          <option value="anxious">Anxious</option>
+          <option value="sad">Sad</option>
+          <option value="angry">Angry</option>
+          <option value="happy">Happy</option>
         </select>
 
         <button id="startBtn">Start my day</button>
 
-         <div id="messageArea"></div>
-        </div>
-        <script src="./script.js"></script>
-
-</body>
+        <div id="messageArea"></div>
+        <div id="adviceArea"></div>
+      </div>
+    </div>
+    <footer>
+      <p>
+        Made with ❤️ by Aliou Cisse.
+        <a
+          href="https://github.com/BigFuAl/first-project/tree/main/smart-daily-dashboard"
+          target="_blank"
+        >
+          View on GitHub
+        </a>
+      </p>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
 </html>
